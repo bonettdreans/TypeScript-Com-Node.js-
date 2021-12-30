@@ -8,6 +8,10 @@ export async function up(knex: Knex) {
         table.string('title_launch').notNullable();
         table.string('type_launch').notNullable();
         table.date('date').notNullable();
+        table.string('client_id')
+        .notNullable()
+        .references('id')
+        .inTable('client');
     });
 }
 
